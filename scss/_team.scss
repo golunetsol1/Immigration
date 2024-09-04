@@ -1,0 +1,106 @@
+.xb-team {
+    &:hover {
+        .xb-item {
+            &--social {
+                li {
+                    opacity: 1;
+                    @include transform(translateY(0));
+                    &:nth-child(2) {
+                        transition-delay: .1s;
+                    }
+                    &:nth-child(3) {
+                        transition-delay: .2s;
+                    }
+                }
+            }
+        }
+    }
+    .xb-item {
+        &--img {
+            margin-right: -33px;
+            max-width: 302px;
+        }
+        &--inner {
+            border: 1px solid #EDF3F5;
+            @include border-radius(20px);
+            overflow: hidden;
+            position: relative;
+            background-color: var(--color-white);
+            max-width: 302px;
+            @include respond(md) {
+                margin: 0 auto;
+            }
+        }
+        &--holder {
+            padding: 30px 10px;
+            padding-bottom: 50px;
+        }
+        &--name {
+            font-size: 24px;
+            a {
+                color: currentColor;
+            }
+        }
+        &--designation {
+            font-size: 14px;
+        }
+        &--social {
+            position: absolute;
+            top: 28px;
+            right: 15px;
+            li {
+                opacity: 0;
+                @include transform(translateY(10px));
+                @include transition(.3s);
+                &:not(:last-child) {
+                    margin-bottom: 6px;
+                }
+                
+                a {
+                    width: 37px;
+                    height: 37px;
+                    background-color: #fff;
+                    @include center;
+                    color: #9FA2AA;
+                    font-size: 14px;
+                    @include border-radius(50%);
+                    &:hover {
+                        color: var(--color-dark);
+                    }
+                }
+            }
+        }
+    }
+}
+.team-wrap {
+    padding: 0 100px;
+    margin: 0 -100px;
+    @include respond(lg){
+        padding: 0px;
+        margin: 0px;
+    }
+}
+.xb-team-bg {
+    .xb-bg {
+        position: absolute;
+        bottom: 15%;
+        @include border-radius(20px);
+        left: 0;
+        width: 100%;
+        height: 43%;
+        background-color: var(--color-gray);
+        z-index: -1;
+        &--2 {
+            width: 57%;
+            left: auto;
+            right: 0;
+            bottom: 35%;
+        }
+    }
+}
+@media (max-device-width: 768px){
+    .team-wrap {
+        padding: 0;
+        margin: 0;
+    }
+}

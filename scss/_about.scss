@@ -1,0 +1,89 @@
+.about {
+    &__img {
+        position: absolute;
+        top: 44%;
+        @include transform(translateY(-50%));
+        z-index: -1;
+        right: 0;
+        @include respond(lg) {
+            width: 46%;
+        }
+        &.style2 {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            z-index: -1;
+            right: 0;
+            top: auto;
+            bottom: 0;
+            @include transform(translate(0));
+        }
+    }
+}
+.about-list {
+    margin: -10px;
+    li {
+        padding: 10px;
+        width: 50%;
+        @include respond(xs) {
+            width: 100%;
+        } 
+    }
+    .xb-item {
+        &--inner {
+            position: relative;
+            padding: 40px 25px;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0px 30px 45px rgba(122, 146, 168, 0.08);
+            border: 1px solid #EDF3F5;
+            background-color: var(--color-white);
+            @include border-radius(15px);
+            &::before {
+                position: absolute;
+                width: 45px;
+                height: 105px;
+                @include border-radius(30px);
+                background-color: #F4F8FA;
+                content: "";
+                top: -6px;
+                left: 0px;
+                z-index: -1;
+                border-top-right-radius: 0;
+                @include transform(rotate(-45deg));
+            }
+        }
+        &--number {
+            width: 36px;
+            height: 36px;
+            margin-right: 29px;
+            background-color: #FE6C3F;
+            color: var(--color-dark);
+            @include center;
+            @include border-radius(50%);
+            position: absolute;
+            top: 49px;
+            left: 25px;
+            font-weight: 700;
+            box-shadow: 0px 4px 7px rgba(178, 190, 205, 0.29);
+            color: var(--color-white);
+            &.color-2 {
+                background-color: #00CC99;
+            }
+            &.color-3 {
+                background-color: #0091FF;
+            }
+            &.color-4 {
+                background-color: #FFBD0F;
+            }
+        }
+        &--holder {
+            padding-left: 60px;
+        }
+        &--title {
+            font-size: 24px;
+        }
+    }
+}

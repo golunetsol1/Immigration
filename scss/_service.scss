@@ -1,0 +1,132 @@
+
+.xb-service {
+    &:hover {
+        .xb-item {
+            &--inner {
+                box-shadow: 0px 14px 19px 0px rgba(221, 229, 236, 0.42);
+                border-color: transparent;
+            }
+        }
+    }
+
+    .xb-item {
+        &--inner {
+            padding: 42px;
+            border: 1px solid #EDF3F5;
+            @include border-radius(20px);
+            background-color: var(--color-white);
+            @include transition(.3s);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                position: absolute;
+                width: 70px;
+                height: 160px;
+                @include border-radius(35px);
+                background-color: #F4F8FA;
+                content: "";
+                top: -39px;
+                left: 5px;
+                z-index: -1;
+                @include transform(rotate(-45deg));
+            }
+        }
+
+        &--icon {
+            width: 58px;
+            height: 58px;
+            background-color: #FE6C3F;
+            @include center;
+            @include border-radius(50%);
+            box-shadow: 0px 4px 7px rgba(178, 190, 205, 0.29);
+
+            &.color2 {
+                background-color: #897CB5;
+            }
+
+            &.color3 {
+                background-color: #00CC99;
+            }
+
+            &.color4 {
+                background-color: #0091FF;
+            }
+
+            &.color5 {
+                background-color: #FFBD0F;
+            }
+
+            &.color6 {
+                background-color: #FB3F7E;
+            }
+        }
+
+        &--title {
+            font-size: 24px;
+
+            a {
+                color: currentColor;
+            }
+        }
+    }
+
+    &__top {
+        align-items: flex-end;
+        padding: 0 45px;
+
+        @include respond(md) {
+            padding: 0;
+        }
+    }
+}
+
+
+
+.service-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 475px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #EDF3F5;
+    background-image: url('../images/visa_bg.png');
+}
+
+.service-img {
+    background-image: url('../images/img_010.jpg');
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 41.5%;
+    max-height: 790px;
+    height: 100%;
+    @include border-radius(20px);
+
+    @include respond(md) {
+        display: none;
+    }
+}
+
+.service-wrap {
+    margin: 0px calc(1vw - 120px);
+    padding: 0 100px;
+    @include respond(md) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    @include respond(lg){
+        margin: 0px calc(1vw - 50px);
+        padding: 0 50px;
+    }
+}
+
+.service-bottom-pb {
+    padding-bottom: 310px;
+}
